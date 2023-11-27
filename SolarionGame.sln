@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarionGame.Api", "SolarionGame.Api\SolarionGame.Api.csproj", "{C62521F1-35BA-419E-A9A0-C36828691CF2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{615D7176-F61F-4585-8C53-185A412E7DAF} = {615D7176-F61F-4585-8C53-185A412E7DAF}
+		{78848BBD-148A-4EC7-87B7-376EA7EDFDC6} = {78848BBD-148A-4EC7-87B7-376EA7EDFDC6}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarionGame.Domain", "SolarionGame.Domain\SolarionGame.Domain.csproj", "{615D7176-F61F-4585-8C53-185A412E7DAF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarionGame.Infrastructure", "SolarionGame.Infrastructure\SolarionGame.Infrastructure.csproj", "{78848BBD-148A-4EC7-87B7-376EA7EDFDC6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{615D7176-F61F-4585-8C53-185A412E7DAF} = {615D7176-F61F-4585-8C53-185A412E7DAF}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C62521F1-35BA-419E-A9A0-C36828691CF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C62521F1-35BA-419E-A9A0-C36828691CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C62521F1-35BA-419E-A9A0-C36828691CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C62521F1-35BA-419E-A9A0-C36828691CF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{615D7176-F61F-4585-8C53-185A412E7DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{615D7176-F61F-4585-8C53-185A412E7DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{615D7176-F61F-4585-8C53-185A412E7DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{615D7176-F61F-4585-8C53-185A412E7DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78848BBD-148A-4EC7-87B7-376EA7EDFDC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78848BBD-148A-4EC7-87B7-376EA7EDFDC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78848BBD-148A-4EC7-87B7-376EA7EDFDC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78848BBD-148A-4EC7-87B7-376EA7EDFDC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B67D9AEA-81DB-4143-9703-90AD4F912D9E}
+	EndGlobalSection
+EndGlobal

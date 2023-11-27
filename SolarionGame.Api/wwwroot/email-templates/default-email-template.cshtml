@@ -1,0 +1,100 @@
+﻿@model dynamic
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div.custom-email-template {
+            width: 100%;
+            height: 100%;
+            font-family: Inter, sans-serif;
+        }
+
+        div.custom-email-template .logo {
+            max-width: 200px;
+            padding: 16px;
+            background-color: #F3B266;
+            border: 4px solid #993D33;
+            box-shadow:
+                0px 0px 0px 4px #5B191E,
+                0px 0px 0px 4px #5B191E inset;
+            text-align: center;
+            margin-bottom: 32px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+            font-size: 18px;
+        }
+
+        small {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="custom-email-template">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="logo">
+                            <span>SolarionGame</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Olá!</p>
+                    </td>
+                </tr>
+
+                @{
+                    string[]? messages = Model?.Messages as string[];
+
+                    if (messages != null && messages.Length > 0)
+                    {
+                        @foreach (var message in messages)
+                        {
+                            <tr>
+                                <td>
+                                    <p>@message</p>
+                                </td>
+                            </tr>
+                        }
+                    }
+                }
+
+                <tr>
+                    <td>
+                        <p>SolarionGame</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <small>Este é um e-mail automático. Por favor não responda.</small>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
