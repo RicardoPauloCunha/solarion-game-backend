@@ -74,8 +74,8 @@ namespace SolarionGame.Api.Controllers
         [Authorize(Policy = RoleTypeEnum.Admin)]
         public IActionResult ListAllScores(
             [FromQuery] long page,
-            [FromQuery] List<RatingTypeEnum> ratingTypes,
-            [FromQuery] List<HeroTypeEnum> heroTypes,
+            [FromQuery(Name = "ratingTypes[]")] List<RatingTypeEnum> ratingTypes,
+            [FromQuery(Name = "heroTypes[]")] List<HeroTypeEnum> heroTypes,
             [FromQuery] int? lastMonths,
             [FromQuery] DateTime? startDate,
             [FromQuery] DateTime? endDate)

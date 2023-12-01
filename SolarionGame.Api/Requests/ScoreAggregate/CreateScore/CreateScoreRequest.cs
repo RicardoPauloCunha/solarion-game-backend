@@ -17,7 +17,7 @@ namespace SolarionGame.Api.Requests.ScoreAggregate.CreateScore
         public HeroTypeEnum HeroType { get; set; }
 
         [DataMember]
-        public List<ActionTypeEnum> ActionTypes { get; set; }
+        public List<DecisionTypeEnum> DecisionTypes { get; set; }
 
         public CreateScoreRequest()
         {

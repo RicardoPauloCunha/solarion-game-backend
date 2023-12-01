@@ -17,12 +17,12 @@ namespace SolarionGame.Api.Requests.ScoreAggregate.CreateScore
                 .NotEmpty()
                 .IsInEnum();
 
-            RuleFor(x => x.ActionTypes)
+            RuleFor(x => x.DecisionTypes)
                 .NotEmpty()
                 .NotNull()
-                .Must(x => x.Distinct().Count() == x.Count).WithMessage("'ActionTypes' não pode conter valores repetidos.");
+                .Must(x => x.Distinct().Count() == x.Count).WithMessage("'DecisionTypes' não pode conter valores repetidos.");
 
-            RuleForEach(x => x.ActionTypes)
+            RuleForEach(x => x.DecisionTypes)
                 .NotEmpty()
                 .IsInEnum();
         }

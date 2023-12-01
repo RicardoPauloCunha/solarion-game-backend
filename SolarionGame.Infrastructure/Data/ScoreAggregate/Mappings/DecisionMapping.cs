@@ -13,10 +13,10 @@ namespace SolarionGame.Infrastructure.Data.ScoreAggregate.Mappings
             builder.HasKey(x => new
             {
                 x.ScoreId,
-                x.ActionType
+                x.DecisionType
             });
 
-            builder.Property(x => x.ActionType)
+            builder.Property(x => x.DecisionType)
                 .HasConversion<int>();
         }
     }

@@ -11,8 +11,8 @@ using SolarionGame.Infrastructure.Data;
 namespace SolarionGame.Api.Migrations
 {
     [DbContext(typeof(SolarionGameContext))]
-    [Migration("20231127145403_Sol2311271")]
-    partial class Sol2311271
+    [Migration("20231201143301_Sol231201")]
+    partial class Sol231201
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -52,10 +52,10 @@ namespace SolarionGame.Api.Migrations
                     b.Property<long>("ScoreId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("ActionType")
+                    b.Property<int>("DecisionType")
                         .HasColumnType("int");
 
-                    b.HasKey("ScoreId", "ActionType");
+                    b.HasKey("ScoreId", "DecisionType");
 
                     b.ToTable("tb_decision", (string)null);
                 });

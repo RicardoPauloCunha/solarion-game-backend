@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SolarionGame.Api.Migrations
 {
-    public partial class Sol2311271 : Migration
+    public partial class Sol231201 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -85,12 +85,12 @@ namespace SolarionGame.Api.Migrations
                 name: "tb_decision",
                 columns: table => new
                 {
-                    ActionType = table.Column<int>(type: "int", nullable: false),
+                    DecisionType = table.Column<int>(type: "int", nullable: false),
                     ScoreId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tb_decision", x => new { x.ScoreId, x.ActionType });
+                    table.PrimaryKey("PK_tb_decision", x => new { x.ScoreId, x.DecisionType });
                     table.ForeignKey(
                         name: "FK_tb_decision_tb_score_ScoreId",
                         column: x => x.ScoreId,

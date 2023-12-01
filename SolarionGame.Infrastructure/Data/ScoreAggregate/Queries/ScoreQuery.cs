@@ -29,7 +29,7 @@ namespace SolarionGame.Infrastructure.Data.ScoreAggregate.Queries
                     x.HeroType,
                     x.RatingType,
                     x.Decisions.Select(y => new DecisionViewModel(
-                        y.ActionType)),
+                        y.DecisionType)),
                     ""))
                 .ToList();
         }
@@ -47,6 +47,7 @@ namespace SolarionGame.Infrastructure.Data.ScoreAggregate.Queries
             #endregion
 
             #region Data
+            bool noDate = false;
             DateTime startDate = new(DateTime.Now.Year, DateTime.Now.Month, 1);
             DateTime endDate = DateTime.Now;
 
@@ -59,6 +60,10 @@ namespace SolarionGame.Infrastructure.Data.ScoreAggregate.Queries
                 startDate = (DateTime)_startDate;
                 endDate = (DateTime)_endDate;
             }
+            else
+            {
+                noDate = true;
+            }
             #endregion
 
             return _context
@@ -68,8 +73,8 @@ namespace SolarionGame.Infrastructure.Data.ScoreAggregate.Queries
                 .Where(x => (page == 0 || x.ScoreId < page)
                     && (allRatingTypes || ratingTypes.Contains(x.RatingType))
                     && (allHeroTypes || heroTypes.Contains(x.HeroType))
-                    && (x.CreationDate.Date >= startDate.Date
-                        && x.CreationDate.Date <= endDate.Date))
+                    && (noDate || (x.CreationDate.Date >= startDate.Date
+                        && x.CreationDate.Date <= endDate.Date)))
                 .Take(10)
                 .Select(x => new ScoreViewModel(
                     x.ScoreId,
@@ -77,7 +82,7 @@ namespace SolarionGame.Infrastructure.Data.ScoreAggregate.Queries
                     x.HeroType,
                     x.RatingType,
                     x.Decisions.Select(y => new DecisionViewModel(
-                        y.ActionType)),
+                        y.DecisionType)),
                     x.User.Name))
                 .ToList();
         }

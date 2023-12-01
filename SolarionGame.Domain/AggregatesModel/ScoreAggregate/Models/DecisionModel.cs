@@ -6,7 +6,7 @@ namespace SolarionGame.Domain.AggregatesModel.ScoreAggregate.Models
 {
     public class DecisionModel
     {
-        public ActionTypeEnum ActionType { get; private set; }
+        public DecisionTypeEnum DecisionType { get; private set; }
 
         public long ScoreId { get; private set; }
 
@@ -15,9 +15,9 @@ namespace SolarionGame.Domain.AggregatesModel.ScoreAggregate.Models
             
         }
 
-        public DecisionModel(ActionTypeEnum actionType)
+        public DecisionModel(DecisionTypeEnum decisionType)
         {
-            ActionType = actionType;
+            DecisionType = decisionType;
         }
 
         public void Validate()

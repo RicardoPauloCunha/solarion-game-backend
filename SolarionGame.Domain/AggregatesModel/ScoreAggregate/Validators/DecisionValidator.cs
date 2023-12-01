@@ -7,7 +7,7 @@ namespace SolarionGame.Domain.AggregatesModel.ScoreAggregate.Validators
     {
         public DecisionValidator()
         {
-            RuleFor(x => x.ActionType)
+            RuleFor(x => x.DecisionType)
                 .NotEmpty()
                 .IsInEnum();
         }

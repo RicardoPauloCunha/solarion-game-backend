@@ -35,7 +35,7 @@ namespace SolarionGame.Api.Requests.ScoreAggregate.CreateScore
             #region Decisões
             List<DecisionModel> decisions = new();
 
-            request.ActionTypes.ForEach(x =>
+            request.DecisionTypes.ForEach(x =>
             {
                 DecisionModel decision = new(x);
 

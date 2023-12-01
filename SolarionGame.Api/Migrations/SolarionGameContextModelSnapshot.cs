@@ -50,10 +50,10 @@ namespace SolarionGame.Api.Migrations
                     b.Property<long>("ScoreId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("ActionType")
+                    b.Property<int>("DecisionType")
                         .HasColumnType("int");
 
-                    b.HasKey("ScoreId", "ActionType");
+                    b.HasKey("ScoreId", "DecisionType");
 
                     b.ToTable("tb_decision", (string)null);
                 });

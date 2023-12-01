@@ -30,10 +30,10 @@ namespace SolarionGame.Domain.AggregatesModel.ScoreAggregate.ViewModels
             Decisions = decisions;
         }
 
-        public ScoreViewModel(ScoreModel score) : this(score.UserId, score.CreationDate, score.HeroType, score.RatingType, "")
+        public ScoreViewModel(ScoreModel score) : this(score.ScoreId, score.CreationDate, score.HeroType, score.RatingType, "")
         {
             List<DecisionViewModel> decisions = score.Decisions.Select(x => new DecisionViewModel(
-                x.ActionType )).ToList();
+                x.DecisionType )).ToList();
 
             Decisions = decisions;
         }
