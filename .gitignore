@@ -6,6 +6,7 @@
 [Oo]bj/**
 [Ww]wwroot/uploads/**
 [Ww]wwroot/uploads/
+**/[Mm]igrations/
 
 # User-specific files
 *.suo
