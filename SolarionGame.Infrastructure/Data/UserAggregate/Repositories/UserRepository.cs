@@ -21,6 +21,8 @@ namespace SolarionGame.Infrastructure.Data.UserAggregate.Repositories
 
         public bool ExistsByEmail(string email)
         {
+            email = email.ToUpper();
+
             return _context
                 .User
                 .Any(x => x.Email == email);
@@ -28,6 +30,8 @@ namespace SolarionGame.Infrastructure.Data.UserAggregate.Repositories
 
         public UserModel GetByEmail(string email)
         {
+            email = email.ToUpper();
+
             return _context
                 .User
                 .FirstOrDefault(x => x.Email == email);
@@ -35,6 +39,8 @@ namespace SolarionGame.Infrastructure.Data.UserAggregate.Repositories
 
         public long GetIdByEmail(string email)
         {
+            email = email.ToUpper();
+
             return _context
                 .User
                 .Where(x => x.Email == email)

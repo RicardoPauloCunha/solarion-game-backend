@@ -22,5 +22,18 @@
                 _ => "",
             };
         }
+
+        public static List<string> ListAllValues()
+        {
+            List<RatingTypeEnum> list = new()
+            {
+                RatingTypeEnum.A,
+                RatingTypeEnum.B,
+                RatingTypeEnum.C,
+                RatingTypeEnum.D,
+            };
+
+            return list.Select(x => GetValue(x)).ToList();
+        }
     }
 }

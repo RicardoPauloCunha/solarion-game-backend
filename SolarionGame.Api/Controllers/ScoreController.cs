@@ -82,5 +82,16 @@ namespace SolarionGame.Api.Controllers
         {
             return Ok(_scoreQuery.ListAllScores(page, ratingTypes, heroTypes, lastMonths, startDate, endDate));
         }
+
+        /// <summary>Buscar os indicadores das pontuações</summary>
+        [HttpGet("all/indicators")]
+        [Authorize(Policy = RoleTypeEnum.Admin)]
+        public IActionResult GetScoreIndicators(
+            [FromQuery] int? lastMonths,
+            [FromQuery] DateTime? startDate,
+            [FromQuery] DateTime? endDate)
+        {
+            return Ok(_scoreQuery.GetScoreIndicators(lastMonths, startDate, endDate));
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SolarionGame.Api.Utils
 {
-    public static class DateTimeUtil
+    public static class DateUtil
     {
         public static DateTime? StringToDate(string dateString)
         {

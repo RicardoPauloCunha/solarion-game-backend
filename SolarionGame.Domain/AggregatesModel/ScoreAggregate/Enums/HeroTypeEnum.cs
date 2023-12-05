@@ -20,5 +20,17 @@
                 _ => "",
             };
         }
+
+        public static List<string> ListAllValues()
+        {
+            List<HeroTypeEnum> list = new()
+            {
+                HeroTypeEnum.Warrior,
+                HeroTypeEnum.Healer,
+                HeroTypeEnum.Mage,
+            };
+
+            return list.Select(x => GetValue(x)).ToList();
+        }
     }
 }

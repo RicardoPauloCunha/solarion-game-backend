@@ -37,7 +37,7 @@ namespace SolarionGame.Api.Requests.UserAggregate.EditUserData
             #endregion
 
             #region Email
-            if (user.Email != request.Email)
+            if (user.Email != request.Email.ToUpper())
             {
                 bool emailExists = _userRepository.ExistsByEmail(request.Email);
 
